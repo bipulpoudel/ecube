@@ -1,0 +1,74 @@
+/* Source by: Cyril Vernier */
+
+.loader {
+  width: 100%;
+  position: fixed;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0;
+  min-height: 100vh;
+  padding: 0;
+  z-index: 999999;
+  background-color: white;
+}
+
+main {
+  animation: cube-bounce 0.5s infinite cubic-bezier( 0, 0.3, 0.6, 1 ) alternate;
+}
+
+.cube {
+  animation: cube-rotate 10s infinite cubic-bezier( 0.2, 0.3, 0.1, 0.7 ) normal;
+  height: 50px;
+  position: relative;
+  transform-style: preserve-3d;
+  width: 50px;
+  z-index: 1;
+}
+
+.cube div {
+  border: 1px solid #ccc;
+  height: inherit;
+  position: absolute;
+  width: inherit;
+}
+
+.cube div:nth-of-type(1) { background-color: rgba(255,255,255,0.3); transform: translateZ( -25px ) rotateY(    0deg ); }
+.cube div:nth-of-type(2) { background-color: rgba(255,255,255,0.3); transform: translateZ(  25px ) rotateX( -180deg ); }
+.cube div:nth-of-type(3) { background-color: rgba(255,255,255,0.3); transform: translateX( -25px ) rotateY(  -90deg ); }
+.cube div:nth-of-type(4) { background-color: rgba(255,255,255,0.3); transform: translateX(  25px ) rotateY(   90deg ); }
+.cube div:nth-of-type(5) { background-color: rgba(255,255,255,0.3); transform: translateY( -25px ) rotateX(  -90deg ); }
+.cube div:nth-of-type(6) { background-color: rgba(255,255,255,0.3); transform: translateY(  25px ) rotateX(   90deg ); }
+
+.shadow {
+  animation: shadow-anim 0.5s infinite cubic-bezier( 0, 0.25, 1, 0.75 ) alternate;
+  background-color: #ddd;
+  height: 10px;
+  width: 54px;
+  z-index: -1;
+}
+
+@keyframes cube-bounce {
+    0% { transform: translateY( 0 ); }
+  100% { transform: translateY( -50px ); }
+}
+
+@keyframes shadow-anim {
+    0% { transform: scaleX(   1 ) scaleY( 0.2 ); border-radius:  0%; filter: blur( 0 ); }
+  100% { transform: scaleX( 1.5 ) scaleY(   1 ); border-radius: 40%; filter: blur( 3px ); }
+}
+
+@keyframes cube-rotate {
+    0% { transform: rotateX(    0deg ) rotateY(    0deg ) rotateZ(    0deg ); }
+   10% { transform: rotateX(    0deg ) rotateY(   90deg ) rotateZ(    0deg ); }
+   20% { transform: rotateX(    0deg ) rotateY(  180deg ) rotateZ(   90deg ); }
+   30% { transform: rotateX(  -90deg ) rotateY(  180deg ) rotateZ(    0deg ); }
+   40% { transform: rotateX(  -90deg ) rotateY(  270deg ) rotateZ(  -90deg ); }
+   50% { transform: rotateX( -180deg ) rotateY(  180deg ) rotateZ(  -90deg ); }
+   60% { transform: rotateX(  -90deg ) rotateY(   90deg ) rotateZ(  -90deg ); }
+   70% { transform: rotateX(  -90deg ) rotateY(  180deg ) rotateZ( -180deg ); }
+   80% { transform: rotateX(    0deg ) rotateY(   90deg ) rotateZ( -180deg ); }
+   90% { transform: rotateX(   90deg ) rotateY(    0deg ) rotateZ(  -90deg ); }
+  100% { transform: rotateX(    0deg ) rotateY(    0deg ) rotateZ(    0deg ); }
+}
