@@ -38,15 +38,27 @@
 	<script src="https://kit.fontawesome.com/8e288cd469.js" crossorigin="anonymous"></script>
 	<!-- Theme style  -->
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/loader.css">
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
 	<!-- Modernizr JS -->
 	<script src="js/modernizr-2.6.2.min.js"></script>
 	<script async>(function(w, d) { w.CollectId = "5e1d9aac4305bc6c0e8b4b4f"; var h = d.head || d.getElementsByTagName("head")[0]; var s = d.createElement("script"); s.setAttribute("type", "text/javascript"); s.setAttribute("src", "https://collectcdn.com/launcher.js"); h.appendChild(s); })(window, document);</script>
 
 	</head>
-	<body>
-		
-	<div class="gtco-loader"></div>
+	<body onload="hide">
+		<div class="loader" id="loader">
+		<main>
+		  <div class="cube">
+		    <div></div>
+		    <div></div>
+		    <div></div>
+		    <div></div>
+		    <div></div>
+		    <div></div>
+		  </div>
+		</main>
+		<div class="shadow"></div>
+		</div>
 	
 	<div id="page">
 
@@ -129,15 +141,12 @@
       <input type="text" class="form-control" id="inlineFormGroupUsername" placeholder="Jane Doe" style="border: 1px solid black;">
     </div>
     <div class="col-sm-3 my-1">
-      <label class="sr-only" for="inlineFormInputGroupUsername">Username</label>
-      <div class="input-group">
-        <div class="input-group-prepend">
-          <div class="input-group-text" style="color: black">dummy</div>
+      <div class="input-group-prepend">
+          <div class="input-group-text" style="color: black;">Dummy</div>
         </div>
-        <input type="text" class="form-control" id="inlineFormInputGroupUsername" placeholder="Username" style="border: 1px solid black;">
-      </div>
+      <input type="text" class="form-control" id="inlineFormGroupUsername" placeholder="Jane Doe" style="border: 1px solid black;">
     </div>
-    <div class="col-sm-3 form-group list">
+    <div class="col-sm-3 my-1 list">
   <label for="sel1" style="color: black;">Select list:</label>
   <select class="form-control" id="sel1" style="border: 1px solid black;">
     <option>1</option>
@@ -147,14 +156,12 @@
   </select>
   </div>
     </div>
-    <div class="col-auto my-1">
+    <div class="col-auto my-1  finish">
       <button type="submit" class="btn btn-special" style="margin-left: 45%;margin-top:20px;border-radius: 30px;">Submit</button>
     </div>
   </div>
 </form>
 		</div>
-		
-		<!-- END .gtco-client -->
 
 		<div class="gtco-services gtco-section">
 			<div class="gtco-container">
@@ -472,7 +479,11 @@
 	<script src="js/magnific-popup-options.js"></script>
 	<!-- Main -->
 	<script src="js/main.js"></script>
-
+	<script type="text/javascript">
+		$(window).on("load",function(){
+			$(".loader").fadeOut("slow");
+		});
+	</script>
 	</body>
 </html>
 
