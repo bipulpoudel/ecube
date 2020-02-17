@@ -1878,7 +1878,6 @@ form label {
 #gtco-logo a{
   font-size: 30px;
   font-family: sans-serif;
-  text-transform: 
 }
 
 
@@ -2030,15 +2029,14 @@ section.pricing {
 .input-group-prepend{
   margin-top: 20px;
 }
+.btn{
+  margin-left: 30%;
+}
 }
 li{
   list-style: none;
 }
 
-gate material
-hide login/sign out
-get internship
-select course
 
 
 
