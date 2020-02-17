@@ -2029,8 +2029,8 @@ section.pricing {
 .input-group-prepend{
   margin-top: 20px;
 }
-.btn{
-  margin-left: 30%;
+.card-body .card-bn{
+  margin-left: 25%;
 }
 }
 li{
